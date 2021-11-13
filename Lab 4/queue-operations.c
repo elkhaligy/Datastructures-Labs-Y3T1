@@ -34,7 +34,8 @@ int dequeue()
     struct node *bye;
     if (front == NULL)
     {
-        printf("Empty");
+        //printf("Empty\n");
+        return 0;
     }
     else
     {
@@ -48,6 +49,11 @@ int dequeue()
 void display()
 {
     struct node *p = front;
+    if (p == NULL)
+    {
+        printf("Empty\n");
+        return;
+    }
     int count = 0;
     while (p != NULL)
     {
@@ -56,11 +62,7 @@ void display()
     }
     // printf("%d", count);
     p = front;
-    if(p==NULL)
-    {
-        printf("Empty\n");
-        return;
-    }
+
     while (p != NULL)
     {
         if (count != 1)
