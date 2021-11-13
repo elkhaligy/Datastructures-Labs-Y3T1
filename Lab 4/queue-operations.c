@@ -48,12 +48,35 @@ int dequeue()
 void display()
 {
     struct node *p = front;
+    int count = 0;
     while (p != NULL)
     {
-
-        printf("%d,", p->data);
+        count++;
+        p = p->next; //
+    }
+    // printf("%d", count);
+    p = front;
+    if(p==NULL)
+    {
+        printf("Empty\n");
+        return;
+    }
+    while (p != NULL)
+    {
+        if (count != 1)
+        {
+            printf("%d,", p->data);
+            count--;
+        }
+        else
+        {
+            printf("%d", p->data);
+        }
         p = p->next;
     }
+    //p = p->next;
+    //printf("%d", p->data);
+    printf("\n");
 }
 int main(void)
 {
