@@ -34,7 +34,7 @@ void display()
     node p = top;
     while (p != NULL)
     {
-        printf("%d ", p->data);
+        printf("%X", p->data);
         p = p->next;
     }
 }
@@ -50,6 +50,19 @@ void to_base_n(int n, int b)
     //     push(n % b);
     //     n = n / b;
     // }
+}
+void above_9()
+{
+    node p = top;
+    while (p != NULL)
+    {
+        if (p->data > 9)
+        {
+            switch (p->data)
+            {
+            }
+        }
+    }
 }
 int main(void)
 {
