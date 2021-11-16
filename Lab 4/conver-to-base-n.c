@@ -45,11 +45,6 @@ void to_base_n(int n, int b)
     int q = n % b;
     push(q);
     to_base_n(n / b, b);
-    // while (n > 0)
-    // {
-    //     push(n % b);
-    //     n = n / b;
-    // }
 }
 void above_9()
 {
