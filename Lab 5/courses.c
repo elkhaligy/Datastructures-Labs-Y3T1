@@ -67,8 +67,8 @@ int main(void)
     for (int i = 0; i < n * 2; i += 2)
     {
         scanf("%d%d", &d, &t);
-        p[i] = t;
-        p[i + 1] = d;
+        p[i] = d;
+        p[i + 1] = t;
         // enqueue(t);
         //enqueue(d);
     }
@@ -79,33 +79,39 @@ int main(void)
     int min = 2000;
     int min_index;
     int i;
-    for(int k=0;k<n;k++)
+    for (int k = 0; k < n; k++)
     {
-        for (i = 0; i < n * 2; i += 2)
+        for (i = 1; i < n * 2; i += 2)
         {
-            if (p[i] < min && q[i]!=1)
+            if (p[i] < min && q[i] != 1)
             {
                 min = p[i];
                 min_index = i;
             }
         }
         enqueue(p[min_index]);
-        enqueue(p[min_index+1]);
-        q[min_index]=1;
-        min=2000;
+        enqueue(p[min_index - 1]);
+        q[min_index] = 1;
+        min = 200000;
+        //display();
+        //printf("\n");
     }
-    
-    for (int i = 0; i < n * 2; i++)
-        printf("%d ", p[i]);
-    //display();
-    //printf("\n");
+
+    // for (int i = 0; i < n * 2; i++)
+    //  printf("%d ", p[i]);
+    display();
+    printf("\n");
     while (front != NULL)
     {
         if (cnt1 == 0)
         {
-            dequeue();
-            cnt1 += dequeue();
+            int x = dequeue();
+            int y = dequeue;
+            if(y>=x)
+            {
+            cnt1 += y;
             cnt2 += 1;
+            }
             continue;
         }
         int x = dequeue();
@@ -115,9 +121,11 @@ int main(void)
             cnt1 += y;
             cnt2 += 1;
         }
+        //printf("\n%d",cnt1);
         //display();
         //printf("\n");
     }
+    //display();
     printf("%d", cnt2);
     return 0;
 }
