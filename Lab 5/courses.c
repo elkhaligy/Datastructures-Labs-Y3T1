@@ -99,18 +99,18 @@ int main(void)
 
     // for (int i = 0; i < n * 2; i++)
     //  printf("%d ", p[i]);
-    display();
-    printf("\n");
+    //display();
+    //printf("\n");
     while (front != NULL)
     {
         if (cnt1 == 0)
         {
             int x = dequeue();
-            int y = dequeue;
-            if(y>=x)
+            int y = dequeue();
+            if (y <= x)
             {
-            cnt1 += y;
-            cnt2 += 1;
+                cnt1 += y;
+                cnt2 += 1;
             }
             continue;
         }
