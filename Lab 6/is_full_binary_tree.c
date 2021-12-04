@@ -141,54 +141,17 @@ struct node_tree *create(int n)
 // End Tree creation
 
 // Start Tree operations
-// void pre_order(struct node_tree *root)
-// {
-//     if (root)
-//     {
-//         printf("%d ", root->node_data);
-//         pre_order(root->lchild);
-//         pre_order(root->rchild);
-//     }
-// }
-// void in_order(struct node_tree *root)
-// {
-//     if (root)
-//     {
-//         in_order(root->lchild);
-//         printf("%d ", root->node_data);
-//         in_order(root->rchild);
-//     }
-// }
-// void post_order(struct node_tree *root)
-// {
-//     if (root)
-//     {
-//         post_order(root->lchild);
-//         post_order(root->rchild);
-//         printf("%d ", root->node_data);
-//     }
-// }
-// int height(struct node_tree *root)
-// {
-//     int x = 0, y = 0;
-//     if (root == 0)
-//         return 0;
-//     x = height(root->lchild);
-//     y = height(root->rchild);
-//     if (x > y)
-//         return x + 1;
-//     else
-//         return y + 1;
-// }
-// int count(struct node_tree *root)
-// {
-//     if (root)
-//         return count(root->lchild) + count(root->rchild) + 1;
-//     return 0;
-// }
-
 bool is_full_tree(struct node_tree *root)
 {
+    /**
+     * The main idea of a full binary tree that it is a tree which it's root node = null
+     * Or it is a tree which it's left child and right child = null
+     * Or it is a tree with left child and right child BUT
+     * The left child must be a full binary tree too AND the right child must be full binary tree
+     * We do these checks recursevly until we reach the bottom left of a tree and then the right child
+     * at the end the return is like (false) and (true) which gives a non-complete binary tree
+     * or (true) and (true) which gives a complete binary tree
+     */
     if (root == NULL)
         return true;
     if (root->lchild == NULL && root->rchild == NULL)
@@ -203,7 +166,8 @@ int main(void)
 {
     int n;
     scanf("%d", &n);
-    if (n == 0 || (n % 2 != 1 && n != 1))
+    // If n is zero or n is even this means NO
+    if (n == 0 || n % 2 == 0)
     {
         printf("NO");
         return 0;
